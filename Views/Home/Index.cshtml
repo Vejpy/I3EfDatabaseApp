@@ -1,0 +1,51 @@
+﻿@model IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center" style="max-width:700px; margin:60px auto; padding:40px; background:white; border-radius:28px; box-shadow:0 10px 30px rgba(255,140,0,0.15); border:2px solid #ffe7cc; font-family:Segoe UI, Arial, sans-serif;">
+    <h1 class="display-4" style="color:#ff8c00; font-weight:700; margin-bottom:22px; letter-spacing:0.5px;">Petice: Ukončete Ragebait na kyberně</h1>
+    <p style="color:#444; font-size:16px; line-height:1.6; margin-bottom:16px;">
+        Tato petice vznikla za účelem omezení a ukončení ragebait chování na kyberně.
+        Chceme vytvořit příjemnější prostředí pro studenty i učitele.
+    </p>
+    <p>
+        Podpořte tuto iniciativu svým podpisem a pomozte zlepšit školní prostředí.
+    </p>
+    <p style="margin-top:26px; font-size:18px; font-weight:600; color:#ff8c00; background:#fff4e6; padding:14px; border-radius:16px;">Už nás je @Model.SupportersCount podporovatelů</p>
+
+    <hr style="margin:30px 0; border-color:#ffe7cc;" />
+
+    <h2 style="color:#ff8c00; margin-bottom:18px;">Přihlaste se k petici</h2>
+    <form method="post" action="" style="text-align:left; display:flex; flex-direction:column; gap:14px;">
+        <label>
+            Jméno:
+            <input type="text" name="NewSupporter.Name" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #ffd6a5;" />
+        </label>
+
+        <label>
+            Příjmení:
+            <input type="text" name="NewSupporter.Surname" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #ffd6a5;" />
+        </label>
+
+        <label>
+            Email:
+            <input type="email" name="NewSupporter.Email" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #ffd6a5;" />
+        </label>
+
+        <label>
+            Zaměstnání (volitelné):
+            <input type="text" name="NewSupporter.Occupation" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ffd6a5;" />
+        </label>
+
+        <label>
+            Telefon (volitelné):
+            <input type="tel" name="NewSupporter.PhoneNumber" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ffd6a5;" />
+        </label>
+
+        <button type="submit" style="margin-top:12px; padding:12px; background:#ff8c00; color:white; font-weight:600; border:none; border-radius:12px; cursor:pointer;">
+            Přihlásit se
+        </button>
+    </form>
+</div>

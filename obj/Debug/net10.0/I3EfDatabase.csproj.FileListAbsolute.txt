@@ -279,3 +279,4 @@
 /Users/vojtechstverak/RiderProjects/I3EfDatabase/I3EfDatabase/obj/Debug/net10.0/I3EfDatabase.pdb
 /Users/vojtechstverak/RiderProjects/I3EfDatabase/I3EfDatabase/obj/Debug/net10.0/I3EfDatabase.genruntimeconfig.cache
 /Users/vojtechstverak/RiderProjects/I3EfDatabase/I3EfDatabase/obj/Debug/net10.0/ref/I3EfDatabase.dll
+/Users/vojtechstverak/RiderProjects/I3EfDatabase/I3EfDatabase/obj/Debug/net10.0/I3EfDatabase.sourcelink.json

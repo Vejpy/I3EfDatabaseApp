@@ -1,5 +1,6 @@
 using I3EfDatabase.Data;
 using I3EfDatabase.Data.Tables;
+using System.Linq;
 
 namespace I3EfDatabase.Services;
 
@@ -25,5 +26,22 @@ public class DatabaseService
     public int Count()
     {
         return _db.Supporters.Count();
+    }
+    
+    
+
+    public List<Supporter> GetAll()
+    {
+        return _db.Supporters.ToList();
+    }
+
+    public void Delete(Guid id)
+    {
+        var supporter = _db.Supporters.FirstOrDefault(s => s.SupporterId.Equals(id));
+        if (supporter != null)
+        {
+            _db.Supporters.Remove(supporter);
+            _db.SaveChanges();
+        }
     }
 }

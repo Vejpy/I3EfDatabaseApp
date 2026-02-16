@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center" style="max-width:700px; margin:60px auto; padding:40px; background:white; border-radius:28px; box-shadow:0 10px 30px rgba(255,140,0,0.15); border:2px solid #ffe7cc; font-family:Segoe UI, Arial, sans-serif;">
+<div class="text-center" style="max-width:770px; margin:60px auto; padding:44px; background:white; border-radius:28px; box-shadow:0 10px 30px rgba(255,140,0,0.15); border:2px solid #ffe7cc; font-family:Segoe UI, Arial, sans-serif;">
     <h1 class="display-4" style="color:#ff8c00; font-weight:700; margin-bottom:22px; letter-spacing:0.5px;">Petice: Ukončete Ragebait na kyberně</h1>
     <p style="color:#444; font-size:16px; line-height:1.6; margin-bottom:16px;">
         Tato petice vznikla za účelem omezení a ukončení ragebait chování na kyberně.
@@ -16,6 +16,45 @@
     <p style="margin-top:26px; font-size:18px; font-weight:600; color:#ff8c00; background:#fff4e6; padding:14px; border-radius:16px;">Už nás je @Model.SupportersCount podporovatelů</p>
 
     <hr style="margin:30px 0; border-color:#ffe7cc;" />
+
+    <h2 style="color:#ff8c00; margin-bottom:18px;">Seznam podporovatelů</h2>
+
+    <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:separate; border-spacing:0; background:white; border-radius:16px; overflow:hidden; box-shadow:0 10px 28px rgba(255,140,0,0.18);">
+            <thead style="background:#fff4e6; color:#ff8c00;">
+            <tr>
+                <th style="padding:14px; text-align:left;">Jméno</th>
+                <th style="padding:14px; text-align:left;">Příjmení</th>
+                <th style="padding:14px; text-align:left;">Email</th>
+                <th style="padding:14px; text-align:left;">Zaměstnání</th>
+                <th style="padding:14px; text-align:left;">Telefon</th>
+                <th style="padding:14px; text-align:center; width:60px;">Akce</th>
+            </tr>
+            </thead>
+            
+            
+            <tbody style="font-size:15px;">
+                @foreach (var supporter in @Model.Supporters)
+                {
+                    <tr style="border-top:1px solid #ffe7cc;">
+                        <td style="padding:12px;">@supporter.Name</td>
+                        <td style="padding:12px;">@supporter.Surname</td>
+                        <td style="padding:12px;">@supporter.Email</td>
+                        <td style="padding:12px;">@supporter.Occupation</td>
+                        <td style="padding:12px;">@supporter.PhoneNumber</td>
+                        <td style="padding:12px; text-align:center;">
+                            <button onclick="deleteSupporter('@supporter.SupporterId')" 
+                                    style="background:#ff4d4f; color:white; border:none; width:32px; height:32px; border-radius:50%; cursor:pointer; font-weight:bold; transition:all 0.2s ease;"
+                                    onmouseover="this.style.transform='scale(1.1)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                                ✕
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
     <h2 style="color:#ff8c00; margin-bottom:18px;">Přihlaste se k petici</h2>
     <form method="post" action="" style="text-align:left; display:flex; flex-direction:column; gap:14px;">
@@ -49,3 +88,18 @@
         </button>
     </form>
 </div>
+<script>
+    async function deleteSupporter(id) {
+        if (!confirm("Opravdu chcete odstranit podporovatele?")) return;
+
+        const response = await fetch(`/Home/DeleteSupporter?id=${id}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            location.reload();
+        } else {
+            alert("Nepodařilo se odstranit záznam.");
+        }
+    }
+</script>

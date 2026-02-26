@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("I3EfDatabase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea358c8a5aabf36f77f0dfcc9a5d2988c0bce391")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7bc580913636064de1f6628dec6da20ab48b2fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("I3EfDatabase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("I3EfDatabase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
